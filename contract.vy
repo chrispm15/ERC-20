@@ -1,6 +1,7 @@
 # @version ^0.3.3
 
 NAME: constant(String[25]) = ''     # Name of your token goes here
+SYMBOL: constant(String[5]) = ''   # Symbol of your token goes here
 DECIMALS: constant(uint256) = 18
 _totalSupply: uint256
 _minted: bool
@@ -27,6 +28,12 @@ def __init__():
 @view
 def name() -> String[25]:
     return NAME
+    
+@external
+@view
+def symbol() -> String[5]:
+    return SYMBOL
+ 
 
 @external
 @view

@@ -54,9 +54,9 @@ def _approve(_owner: address, _spender: address, _amount: uint256):
     self._allowances[_owner][_spender] = _amount
     log Approve(_owner, _spender, _amount)
 
-# Mints and transfers the Total Supply of the token, can only be called by contract creator
+
 @external
-def mint(_to: address, _tSupply: uint256) -> bool:
+def mint(_to: address, _tSupply: uint256) -> bool:              # Mints and transfers the Total Supply of the token, can only be called by contract creator
     assert msg.sender == self._minter, "Only creator can mint"
     assert self._minted == False, "Token has already been minted"
     self._totalSupply = _tSupply * 10 ** DECIMALS
